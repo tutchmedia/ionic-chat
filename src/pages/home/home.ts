@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
 
+export class HomePage {
   items = [
       'Pokémon Yellow',
       'Super Metroid',
@@ -30,10 +31,21 @@ export class HomePage {
 
   itemSelected(item: string) {
     console.log("Selected Item", item);
+    this.showAlert(item);
   }
 
-  constructor(public navCtrl: NavController) {
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
 
+  }
+
+
+  showAlert(item) {
+    let alert = this.alertCtrl.create({
+      title: 'Woohoo!',
+      subTitle: 'You selected the title: '+item,
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }
