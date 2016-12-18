@@ -6,9 +6,13 @@
 
 <ion-content class="card-background-page">
 
-    <ion-card *ngFor="let item of items" (click)="itemSelected(item)">
-      <img src="assets/images/{{item.image}}"/>
-      <div class="card-title">{{ item.title }}</div>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-card *ngFor="let item of games" (click)="itemSelected(item)">
+      <img src="{{item.game_image.url}}"/>
+      <div class="card-title">{{ item.game_title }}</div>
       <div class="card-subtitle">{{item.release}}</div>
     </ion-card>
 
