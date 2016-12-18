@@ -4,10 +4,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-  <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-    {{ item }}
-  </button>
-</ion-list>
+<ion-content class="card-background-page">
+
+    <ion-card *ngFor="let item of items" (click)="itemSelected(item)">
+      <img src="assets/images/{{item.image}}"/>
+      <div class="card-title">{{ item.title }}</div>
+      <div class="card-subtitle">{{item.release}}</div>
+    </ion-card>
+
 </ion-content>

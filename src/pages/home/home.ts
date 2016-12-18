@@ -9,25 +9,15 @@ import { AlertController } from 'ionic-angular';
 })
 
 export class HomePage {
-  items = [
-      'Pokémon Yellow',
-      'Super Metroid',
-      'Mega Man X',
-      'The Legend of Zelda',
-      'Pac-Man',
-      'Super Mario World',
-      'Street Fighter II',
-      'Half Life',
-      'Final Fantasy VII',
-      'Star Fox',
-      'Tetris',
-      'Donkey Kong III',
-      'GoldenEye 007',
-      'Doom',
-      'Fallout',
-      'GTA',
-      'Halo'
-    ];
+  items = [{
+    "title":"Pokémon Yellow",
+    "image":"card-saopaolo.png",
+    "release":"14/01/2017"
+  },{
+    "title":"Gravity Rush 2",
+    "image":"card-sf.png",
+    "release":"22/01/2017"
+  }];
 
   itemSelected(item: string) {
     console.log("Selected Item", item);
@@ -42,7 +32,7 @@ export class HomePage {
   showAlert(item) {
     let alert = this.alertCtrl.create({
       title: 'Woohoo!',
-      subTitle: 'You selected the title: '+item,
+      subTitle: 'You selected the title: '+item.title,
       buttons: ['OK']
     });
     alert.present();
