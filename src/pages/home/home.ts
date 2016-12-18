@@ -74,7 +74,7 @@ export class HomePage {
   let toast = this.toastCtrl.create({
     message: successMessage,
     duration: 3000,
-    position: 'top'
+    position: 'bottom'
   });
 
   toast.onDidDismiss(() => {
